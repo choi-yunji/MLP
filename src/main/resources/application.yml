@@ -1,0 +1,110 @@
+
+spring:
+  profiles:
+    active: local
+
+---
+spring:
+  profiles: local
+  devtools:
+    livereload:
+      enable: true
+    restart:
+      enable: true
+
+  servlet:
+    multipart:
+      max-file-size: 50MB
+      max-request-size: 50MB
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+      use-new-id-generator-mappings: true
+      naming:
+        implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+      show-sql: true
+
+  session:
+    store-type: jdbc
+
+  datasource:
+    url: 127.0.0.1:3306/mlp
+    username: mlp
+    password: mlp1234
+    driver-class-name: org.mariadb.jdbc.Driver
+
+  messages:
+    basename: messages,ValidationMessages,PropertyNames
+    cache-duration: -1
+    encoding: UTF-8
+
+server:
+  port: 9090
+
+  servlet:
+    session:
+      timeout: 60m
+  ssl:
+    enabled: false
+    key-alias: inaf
+    key-store: inaf.pkcs12
+    key-store-password: test1234
+    key-password: test1234
+    trust-store: inaftrust.pkcs12
+    trust-store-password: test1234
+  error:
+    include-exception: true
+    include-stacktrace: always
+
+dog:
+  image:
+    path: C:\upload
+---
+
+---
+spring:
+  profiles: real
+  devtools:
+    livereload:
+      enable: true
+    restart:
+      enable: true
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+      use-new-id-generator-mappings: true
+      naming:
+        implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+      show-sql: true
+
+  session:
+    store-type: jdbc
+
+  datasource:
+    url:
+    username:
+    password:
+    driver-class-name: org.mariadb.jdbc.Driver
+
+  messages:
+    basename: messages,ValidationMessages,PropertyNames
+    cache-duration: -1
+    encoding: UTF-8
+
+server:
+  port: 8080
+
+  error:
+    include-exception: true
+    include-stacktrace: always
+---
