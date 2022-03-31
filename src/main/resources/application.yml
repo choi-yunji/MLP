@@ -29,14 +29,13 @@ spring:
         dialect: org.hibernate.dialect.MySQL5InnoDBDialect
       show-sql: true
 
-  session:
-    store-type: jdbc
+
 
   datasource:
-    url: 127.0.0.1:3306/mlp
-    username: mlp
-    password: mlp1234
-    driver-class-name: org.mariadb.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/finalproject
+    username: root
+    password: root 
+    driver-class-name: com.mysql.cj.jdbc.Driver
 
   messages:
     basename: messages,ValidationMessages,PropertyNames
@@ -61,50 +60,4 @@ server:
     include-exception: true
     include-stacktrace: always
 
-dog:
-  image:
-    path: C:\upload
----
 
----
-spring:
-  profiles: real
-  devtools:
-    livereload:
-      enable: true
-    restart:
-      enable: true
-
-  jpa:
-    hibernate:
-      ddl-auto: update
-      use-new-id-generator-mappings: true
-      naming:
-        implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
-        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
-    properties:
-      hibernate:
-        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
-      show-sql: true
-
-  session:
-    store-type: jdbc
-
-  datasource:
-    url:
-    username:
-    password:
-    driver-class-name: org.mariadb.jdbc.Driver
-
-  messages:
-    basename: messages,ValidationMessages,PropertyNames
-    cache-duration: -1
-    encoding: UTF-8
-
-server:
-  port: 8080
-
-  error:
-    include-exception: true
-    include-stacktrace: always
----
