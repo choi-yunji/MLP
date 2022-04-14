@@ -18,7 +18,7 @@ import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
-@PropertySource("classpath:/application.properties")
+@PropertySource("classpath:/application.yml")
 public class DatabaseConfig implements WebMvcConfigurer{
 
 	@Value("${fileUploadPath}")

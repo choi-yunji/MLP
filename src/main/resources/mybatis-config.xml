@@ -5,11 +5,14 @@
 <configuration>
     <typeAliases> 
         <!-- package name="com.example.demo"/-->
-        
-      
+       
+      <typeAlias alias = "SearchResultDto" type ="org.multicampus.mlp.SearchResult.domain.SearchResultDto"/>
+      <typeAlias alias = "BookingDto" type ="org.multicampus.mlp.SearchResult.domain.BookingDto"/> 
+      <typeAlias alias="HelpDto" type="org.multicampus.mlp.help.domain.HelpDto" />
     </typeAliases>
     
     <mappers>   
-
+		<mapper resource="mappers/SearchResult.xml"/>
+		<mapper resource="mappers/Help.xml" />
     </mappers>
 </configuration>

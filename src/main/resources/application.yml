@@ -32,10 +32,14 @@ spring:
 
 
   datasource:
-    url: jdbc:mysql://localhost:3306/finalproject
+    url: jdbc:mysql://127.0.0.1:3306/finalproject
     username: root
     password: root 
     driver-class-name: com.mysql.cj.jdbc.Driver
+  
+  session:
+    store-type: jdbc
+    jdbc.initialize-schema: always  
 
   messages:
     basename: messages,ValidationMessages,PropertyNames
@@ -59,5 +63,10 @@ server:
   error:
     include-exception: true
     include-stacktrace: always
+  
+  upload:
+     fileUploadPath : fileupload
+     domain : http://127.0.0.1:9090
 
+  
 
