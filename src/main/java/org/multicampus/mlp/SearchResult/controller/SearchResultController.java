@@ -33,6 +33,7 @@ public class SearchResultController {
 	public HashMap<String, Object> SearchResult(SearchResultDto dto,@RequestBody Map<String, Object> params) {
 		System.out.println(params);
 		System.out.println();
+		System.out.println("aaaaaaaaaaaaaa");
 		JSONObject json = new JSONObject(params);
 		JSONObject data = new JSONObject((Map) json.get("params"));
 		dto.setHouse_bedroom((int) data.get("room"));

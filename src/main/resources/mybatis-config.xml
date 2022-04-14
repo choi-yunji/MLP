@@ -11,10 +11,14 @@
       <typeAlias alias="FacilityDto" type="org.multicampus.mlp.SearchResult.domain.FacilityDto" />
       <typeAlias alias="HelpDto" type="org.multicampus.mlp.help.domain.HelpDto" />
 
+		 <typeAlias alias="HouseDto" type="org.multicampus.mlp.house.HouseDto"/>
+	     <typeAlias alias="HouseImageDto" type="org.multicampus.mlp.house.HouseImageDto"/>
+	
     </typeAliases>
     
     <mappers>   
 		<mapper resource="mappers/SearchResult.xml"/>
 		<mapper resource="mappers/Help.xml" />
+		<mapper resource="mappers/House.xml"/>
     </mappers>
 </configuration>
