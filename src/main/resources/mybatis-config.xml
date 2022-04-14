@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+ 
+<configuration>
+    <typeAliases> 
+        <!-- package name="com.example.demo"/-->
+       
+      <typeAlias alias = "SearchResultDto" type ="org.multicampus.mlp.SearchResult.domain.SearchResultDto"/>
+      <typeAlias alias = "BookingDto" type ="org.multicampus.mlp.SearchResult.domain.BookingDto"/> 
+      <typeAlias alias="FacilityDto" type="org.multicampus.mlp.SearchResult.domain.FacilityDto" />
+      <typeAlias alias="HelpDto" type="org.multicampus.mlp.help.domain.HelpDto" />
+
+    </typeAliases>
+    
+    <mappers>   
+		<mapper resource="mappers/SearchResult.xml"/>
+		<mapper resource="mappers/Help.xml" />
+    </mappers>
+</configuration>
