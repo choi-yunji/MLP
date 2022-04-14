@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+<mapper namespace="SearchResult">
+	
+	<select id ="Search_list" parameterType = "SearchResultDto" resultType = "SearchResultDto">
+		select *
+		from house
+		where house_guest >= #{house_guest} and
+		 house_bedroom >= #{house_bedroom} and
+		 house_address1 like concat ('%', #{house_address1}, '%')
+			
+	</select>
+	
+	
+	<select id ="Search_view" parameterType = "int" resultType = "SearchResultDto">
+		select *
+		from house
+		where house_id = #{id}
+			
+	</select>
+	
+	<select id= "Search_getTotal" parameterType = "SearchResultDto" resultType = "int">
+		select count(*)
+		from house
+		where house_guest >= #{house_guest} and
+		 house_bedroom >= #{house_bedroom} and
+		 house_address1 like concat ('%', #{house_address1}, '%')
+	</select>
+	
+	<insert  id="Booking" parameterType = "BookingDto">
+		insert booking(booking_price, booking_create, house_id, user_id)
+		values(#{booking_price}, now(), #{house_id}, 1)
+	</insert>
+	
+	<select id ="checkmax_id" resultType = "int">
+		select MAX(booking_id) from booking;
+	</select>
+	
+	<insert id ="Schedule" parameterType = "BookingDto">
+		insert schedule(schedule_year, schedule_month, schedule_day, schedule_create, booking_id)
+		values(#{year}, #{month}, #{day}, now(),#{booking_id})
+	</insert>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
