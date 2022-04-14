@@ -5,6 +5,7 @@ import java.util.List;
 import javax.annotation.Resource;
 
 import org.multicampus.mlp.SearchResult.domain.BookingDto;
+import org.multicampus.mlp.SearchResult.domain.FacilityDto;
 import org.multicampus.mlp.SearchResult.domain.SearchResultDto;
 import org.multicampus.mlp.SearchResult.repository.SearchResultDao;
 import org.springframework.stereotype.Service;
@@ -43,5 +44,17 @@ public class SearchResultServiceImpl implements SearchResultService{
 	public int maxid() {
 		// TODO Auto-generated method stub
 		return dao.maxid();
+	}
+
+	@Override
+	public List<String> getImage(int id) {
+		// TODO Auto-generated method stub
+		return dao.getImage(id);
+	}
+
+	@Override
+	public List<FacilityDto> getFacility(int id) {
+		// TODO Auto-generated method stub
+		return dao.getFacility(id);
 	}
 }

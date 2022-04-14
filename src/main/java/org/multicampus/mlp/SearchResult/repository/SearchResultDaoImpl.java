@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.multicampus.mlp.SearchResult.domain.BookingDto;
+import org.multicampus.mlp.SearchResult.domain.FacilityDto;
 import org.multicampus.mlp.SearchResult.domain.SearchResultDto;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,6 +46,18 @@ public class SearchResultDaoImpl implements SearchResultDao{
 	public int maxid() {
 		// TODO Auto-generated method stub
 		return sm.selectOne("checkmax_id");
+	}
+
+	@Override
+	public List<String> getImage(int id) {
+		// TODO Auto-generated method stub
+		return sm.selectList("Search_image", id);
+	}
+
+	@Override
+	public List<FacilityDto> getFacility(int id) {
+		// TODO Auto-generated method stub
+		return sm.selectList("Search_facility", id);
 	}
 	
 }

@@ -49,6 +49,27 @@ public class SearchResultController {
 		return map;
 	}
 	
+	
+	@RequestMapping("/search/image/{id}")
+	public HashMap<String, Object> SearchImage(@PathVariable("id")int id){
+		HashMap<String, Object>map = new HashMap<String, Object>();
+		System.out.println("image : "+id);
+		map.put("list", Service.getImage(id));
+		
+		return map;
+	}
+	
+	
+	@RequestMapping("/search/facility/{id}")
+	public HashMap<String, Object> SearchFacility(@PathVariable("id")int id){
+		HashMap<String, Object>map = new HashMap<String, Object>();
+		System.out.println("facility : "+id);
+		map.put("list", Service.getFacility(id));
+		
+		return map;
+	}
+	
+	
 	@RequestMapping("/search/view/{id}")
 	public HashMap<String, Object> getview(@PathVariable("id")int id) {
 		HashMap<String, Object>map = new HashMap<String, Object>();

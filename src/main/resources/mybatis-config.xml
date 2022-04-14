@@ -8,7 +8,9 @@
        
       <typeAlias alias = "SearchResultDto" type ="org.multicampus.mlp.SearchResult.domain.SearchResultDto"/>
       <typeAlias alias = "BookingDto" type ="org.multicampus.mlp.SearchResult.domain.BookingDto"/> 
+      <typeAlias alias="FacilityDto" type="org.multicampus.mlp.SearchResult.domain.FacilityDto" />
       <typeAlias alias="HelpDto" type="org.multicampus.mlp.help.domain.HelpDto" />
+
     </typeAliases>
     
     <mappers>   

@@ -14,6 +14,18 @@
 			
 	</select>
 	
+	<select id="Search_image" parameterType = "int" resultType = "String">
+		select IMAGES_THUMBNAIL
+		from IMAGES
+		where house_id = #{id}
+	</select>
+	
+	<select id ="Search_facility" parameterType ="int" resultType = "FacilityDto">
+		select *
+		from FACILITY
+		where house_id = #{id}
+	</select>
+	
 	
 	<select id ="Search_view" parameterType = "int" resultType = "SearchResultDto">
 		select *
