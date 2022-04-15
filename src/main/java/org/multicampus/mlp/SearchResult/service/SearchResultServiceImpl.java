@@ -57,4 +57,10 @@ public class SearchResultServiceImpl implements SearchResultService{
 		// TODO Auto-generated method stub
 		return dao.getFacility(id);
 	}
+
+	@Override
+	public void schedule(BookingDto dto) {
+		// TODO Auto-generated method stub
+		dao.schedule(dto);
+	}
 }

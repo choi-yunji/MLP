@@ -13,12 +13,15 @@
 
 		 <typeAlias alias="HouseDto" type="org.multicampus.mlp.house.HouseDto"/>
 	     <typeAlias alias="HouseImageDto" type="org.multicampus.mlp.house.HouseImageDto"/>
-	
+	        <typeAlias alias="Host_HouseDto" type="org.multicampus.mlp.hostmode.house.domain.Host_HouseDto" />
+        <typeAlias alias="Host_ReservationDto" type="org.multicampus.mlp.hostmode.reservation.domain.Host_ReservationDto" />
     </typeAliases>
     
     <mappers>   
 		<mapper resource="mappers/SearchResult.xml"/>
 		<mapper resource="mappers/Help.xml" />
 		<mapper resource="mappers/House.xml"/>
+		        <mapper resource="mappers/Host_house.xml" />
+        <mapper resource="mappers/Host_reservation.xml" />
     </mappers>
 </configuration>
