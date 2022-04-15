@@ -39,9 +39,10 @@ public class SearchResultDaoImpl implements SearchResultDao{
 	
 	public void booking(BookingDto dto) {
 		sm.insert("Booking", dto);
-		sm.insert("Schedule", dto);
+
 	}
 
+	
 	@Override
 	public int maxid() {
 		// TODO Auto-generated method stub
@@ -58,6 +59,12 @@ public class SearchResultDaoImpl implements SearchResultDao{
 	public List<FacilityDto> getFacility(int id) {
 		// TODO Auto-generated method stub
 		return sm.selectList("Search_facility", id);
+	}
+
+	@Override
+	public void schedule(BookingDto dto) {
+		// TODO Auto-generated method stub
+		sm.insert("Schedule", dto);
 	}
 	
 }

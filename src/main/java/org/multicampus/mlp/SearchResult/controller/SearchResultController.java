@@ -56,6 +56,7 @@ public class SearchResultController {
 		HashMap<String, Object>map = new HashMap<String, Object>();
 		System.out.println("image : "+id);
 		map.put("list", Service.getImage(id));
+		System.out.println(Service.getImage(id));
 		
 		return map;
 	}
@@ -115,10 +116,14 @@ public class SearchResultController {
 		l_dto.setMonth(arr_last[1]);
 		l_dto.setDay(arr_last[2]);
 		
-		s_dto.setBooking_id(Service.maxid());
+		
 		Service.booking(s_dto);
+		s_dto.setBooking_id(Service.maxid());
 		l_dto.setBooking_id(Service.maxid());
-		Service.booking(l_dto);
+		
+		Service.schedule(s_dto);
+		Service.schedule(l_dto);
+		
 		map.put("result", "success");
 		
 		return map;
