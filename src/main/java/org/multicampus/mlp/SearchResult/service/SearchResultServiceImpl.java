@@ -63,4 +63,16 @@ public class SearchResultServiceImpl implements SearchResultService{
 		// TODO Auto-generated method stub
 		dao.schedule(dto);
 	}
+
+	@Override
+	public String getID(String email) {
+		// TODO Auto-generated method stub
+		return dao.getID(email);
+	}
+
+	@Override
+	public void insertID(String email) {
+		// TODO Auto-generated method stub
+		dao.insertID(email);
+	}
 }

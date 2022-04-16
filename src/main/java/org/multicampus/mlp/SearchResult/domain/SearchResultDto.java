@@ -21,7 +21,7 @@ public class SearchResultDto {
 	private String house_address2 = "";
 	private int house_pay  =0;
 	private String user_id = "";
-	private String image = "";
+	private String images_thumbnail = "";
 	
 	@Builder
 	public SearchResultDto(String house_id, String house_name, String house_contents, int house_guest, int house_bed,

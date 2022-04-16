@@ -24,6 +24,7 @@ public class Host_ReservationDto extends BaseDto{
 	private String house_name="";
 	private String user_name="";
 	private String images_thumbnail="";
+	private String user_email= "";
 	
 	public Host_ReservationDto(String booking_id, String booking_price, String booking_status, String booking_people,
 			String booking_complete, String booking_cancel, String booking_create, String booking_update,

@@ -36,9 +36,9 @@ public class SearchResultController {
 		System.out.println("aaaaaaaaaaaaaa");
 		JSONObject json = new JSONObject(params);
 		JSONObject data = new JSONObject((Map) json.get("params"));
-		dto.setHouse_bedroom((int) data.get("room"));
+		dto.setHouse_bedroom(Integer.parseInt(String.valueOf(data.get("room"))) );
 		dto.setHouse_address1((String) data.get("address"));
-		dto.setHouse_guest((int) data.get("guest"));
+		dto.setHouse_guest(Integer.parseInt(String.valueOf(data.get("guest"))));
 		
 
 		HashMap<String, Object>map = new HashMap<String, Object>();
@@ -98,6 +98,13 @@ public class SearchResultController {
 		
 		BookingDto s_dto = new BookingDto();
 		BookingDto l_dto = new BookingDto();
+		System.out.println("id "+data.get("user"));
+		System.out.println("guest "+data.get("guest"));
+		s_dto.setUser_id(Integer.parseInt(String.valueOf( data.get("user"))));
+		l_dto.setUser_id(Integer.parseInt(String.valueOf( data.get("user"))));
+		
+		s_dto.setBooking_people(Integer.parseInt(String.valueOf( data.get("guest"))));
+		l_dto.setBooking_people(Integer.parseInt(String.valueOf( data.get("guest"))));
 		
 		
 		s_dto.setBooking_price((int) data.get("pay"));
@@ -125,6 +132,22 @@ public class SearchResultController {
 		Service.schedule(l_dto);
 		
 		map.put("result", "success");
+		
+		return map;
+	}
+	
+	@RequestMapping("/signup/{email}")
+	public HashMap<String, Object> getID(@PathVariable("email")String email) {
+		HashMap<String, Object>map = new HashMap<String, Object>();
+		System.out.println(email);
+		System.out.println(Service.getID(email));
+		if(Service.getID(email)!=null) {
+			map.put("result",Service.getID(email));
+		}else {
+			Service.insertID(email);
+			map.put("result",Service.getID(email));
+		}
+		
 		
 		return map;
 	}

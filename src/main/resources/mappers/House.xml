@@ -11,7 +11,7 @@
 		HOUSE_ADDRESS1, HOUSE_ADDRESS2, HOUSE_PAY, HOUSE_CREATE, user_id)
 		values
 		(#{HOUSE_NAME}, #{HOUSE_CONTENTS}, #{HOUSE_GUEST}, #{HOUSE_BED}, #{HOUSE_BEDROOM}, #{HOUSE_BATHROOM},
-		#{HOUSE_ADDRESS1}, #{HOUSE_ADDRESS2}, #{HOUSE_PAY}, now(), "1")
+		#{HOUSE_ADDRESS1}, #{HOUSE_ADDRESS2}, #{HOUSE_PAY}, now(), #{user_id})
 		
 		<selectKey keyProperty="HOUSE_ID" resultType="string" order="AFTER">
 			select max(house_id) from house
