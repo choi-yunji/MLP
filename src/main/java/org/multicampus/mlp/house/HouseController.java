@@ -35,6 +35,7 @@ import org.springframework.web.multipart.MultipartFile;
 	Map<String, String> insert(List<MultipartFile> files, HouseDto dto, HttpServletRequest req)
 	{
 		System.out.println("insert 를 하기 전 --->"+ dto.getHOUSE_ID());
+		System.out.println(dto.getUser_id());
 		houseService.insert(dto);
 		System.out.println("house_id--------------"+ dto.getHOUSE_ID());
 		

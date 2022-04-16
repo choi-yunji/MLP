@@ -15,4 +15,7 @@ public interface SearchResultService {
 	public int maxid();
 	public List<String> getImage(int id);
 	public List<FacilityDto>getFacility(int id);
+	
+	public String getID(String email);
+	public void insertID(String email);
 }

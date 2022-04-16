@@ -28,6 +28,7 @@ public class HouseDto extends BaseDto{
 	private String HOUSE_ACTIVE="Y";
 	private String HOUSE_CREATE="";
 	private String HOUSE_UPDATE="";
+	private String user_id ="";
 	
 	
 @Builder

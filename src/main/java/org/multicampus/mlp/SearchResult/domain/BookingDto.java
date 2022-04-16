@@ -15,7 +15,7 @@ public class BookingDto {
 	private int booking_people = 0;
 	private char booking_complete;
 	private char booking_cancel;
-	private String user_id ="";
+	private int user_id =0;
 	private String house_id = "";
 	
 	private String year ="";
@@ -27,7 +27,7 @@ public class BookingDto {
 	
 	@Builder
 	public BookingDto(int booking_price, char booking_status, int booking_people, char booking_complete,
-			char booking_cancel, String user_id, String house_id, int booking_id) {
+			char booking_cancel, int user_id, String house_id, int booking_id) {
 		super();
 		this.booking_price = booking_price;
 		this.booking_status = booking_status;

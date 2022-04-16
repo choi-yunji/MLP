@@ -66,5 +66,17 @@ public class SearchResultDaoImpl implements SearchResultDao{
 		// TODO Auto-generated method stub
 		sm.insert("Schedule", dto);
 	}
+
+	@Override
+	public String getID(String email) {
+		// TODO Auto-generated method stub
+		return sm.selectOne("get_id", email);
+	}
+
+	@Override
+	public void insertID(String email) {
+		// TODO Auto-generated method stub
+		sm.insert("insert_email", email);
+	}
 	
 }
